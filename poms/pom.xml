@@ -34,19 +34,6 @@
         <system>Github</system>
     </issueManagement>
 
-    <distributionManagement>
-        <repository>
-            <id>jfrog-sandbox-release</id>
-            <name>openhab-releases</name>
-            <url>https://openhab.jfrog.io/openhab/sandbox-release</url>
-        </repository>
-        <snapshotRepository>
-            <id>jfrog-sandbox-snapshot</id>
-            <name>openhab-snapshots</name>
-            <url>https://openhab.jfrog.io/openhab/sandbox-snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -205,6 +192,52 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>sandbox</id>
+            <activation>
+                <property>
+                    <name>sandbox</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <properties>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>jfrog-sandbox-release</id>
+                    <name>openhab-releases</name>
+                    <url>https://openhab.jfrog.io/openhab/sandbox-release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>jfrog-sandbox-snapshot</id>
+                    <name>openhab-snapshots</name>
+                    <url>https://openhab.jfrog.io/openhab/sandbox-snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <activation>
+                <property>
+                    <name>!sandbox</name>
+                </property>
+            </activation>
+            <properties>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>bintray</id>
+                    <name>openhab-releases</name>
+                    <url>https://api.bintray.com/maven/openhab/mvn/openhab-core/;publish=1</url>
+                </repository>
+                <snapshotRepository>
+                    <id>jfrog</id>
+                    <name>openhab-snapshots</name>
+                    <url>https://openhab.jfrog.io/openhab/sandbox-snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
         </profile>
 
     <!-- static code analysis profiles -->

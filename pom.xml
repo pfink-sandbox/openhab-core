@@ -37,17 +37,6 @@
         <system>Github</system>
     </issueManagement>
 
-    <distributionManagement>
-        <repository>
-            <id>bintray</id>
-            <url>https://api.bintray.com/maven/openhab/mvn/openhab-core/;publish=1</url>
-        </repository>
-        <snapshotRepository>
-            <id>jfrog</id>
-            <url>https://openhab.jfrog.io/openhab/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <modules>
         <module>poms</module>
         <module>poms/tycho</module>
@@ -76,4 +65,53 @@
         </pluginManagement>
      </build>
 
+
+     <profiles>
+        <profile>
+            <id>sandbox-repository</id>
+            <activation>
+                <property>
+                    <name>sandbox</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <properties>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>jfrog-sandbox-release</id>
+                    <name>openhab-releases</name>
+                    <url>https://openhab.jfrog.io/openhab/sandbox-release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>jfrog-sandbox-snapshot</id>
+                    <name>openhab-snapshots</name>
+                    <url>https://openhab.jfrog.io/openhab/sandbox-snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>prod-repository</id>
+            <activation>
+                <property>
+                    <name>!sandbox</name>
+                </property>
+            </activation>
+            <properties>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>bintray</id>
+                    <name>openhab-releases</name>
+                    <url>https://api.bintray.com/maven/openhab/mvn/openhab-core/;publish=1</url>
+                </repository>
+                <snapshotRepository>
+                    <id>jfrog</id>
+                    <name>openhab-snapshots</name>
+                    <url>https://openhab.jfrog.io/openhab/sandbox-snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
