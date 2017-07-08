@@ -34,7 +34,7 @@
         <system>Github</system>
     </issueManagement>
 
-    <properties>
+    <properties>        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -44,6 +44,7 @@
         <groovy.eclipse.compiler.version>2.9.2-01</groovy.eclipse.compiler.version>
         <groovy.eclipse.batch.version>2.4.3-01</groovy.eclipse.batch.version>
 
+        <oh2.version>2.1.0-SNAPSHOT</oh2.version>
         <ohdr.version>1.0.12</ohdr.version>
         <esh.version>0.9.0-SNAPSHOT</esh.version>
         <repo.version>2.1.x</repo.version>
