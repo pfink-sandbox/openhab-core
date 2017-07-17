@@ -14,6 +14,7 @@ removeSpyPlugin
 checkForScmChanges
 tagScm
 detectReleaseArtifacts
+setDevVersion
 setDevVersionTycho
-#installArtifacts
-#deployArtifacts
+installArtifacts
+deployArtifacts
