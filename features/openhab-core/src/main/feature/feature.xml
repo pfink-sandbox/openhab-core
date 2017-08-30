@@ -26,12 +26,11 @@
         <feature>esh-ui-icon</feature>
         <feature>esh-storage-json</feature>
         <feature>openhab-runtime-certificate</feature>
+        <feature>openhab-runtime-httpclient</feature>
         <feature>openhab-transport-mdns</feature>
-        <feature dependency="true">shell</feature>
+        <feature prerequisite="true">shell</feature>
+        <feature prerequisite="true">wrapper</feature>
         <bundle start-level="90">mvn:org.openhab.core/org.openhab.core/${project.version}</bundle>
-        <bundle prerequisite="true">mvn:org.apache.karaf.shell/org.apache.karaf.shell.core/${karaf.version}</bundle>
-        <bundle prerequisite="true">mvn:org.apache.karaf.wrapper/org.apache.karaf.wrapper.core/${karaf.version}</bundle>
-        <bundle start-level="30">mvn:org.eclipse.jetty/jetty-proxy/${jetty.version}</bundle>
         <bundle>mvn:org.openhab.core/org.openhab.core.karaf/${project.version}</bundle>
         <bundle>mvn:org.openhab.core/org.openhab.io.sound/${project.version}</bundle>
         <bundle>mvn:org.openhab.core/org.openhab.ui.dashboard/${project.version}</bundle>
@@ -46,6 +45,14 @@
         </config>
     </feature>
 
+    <feature name="openhab-runtime-httpclient" description="HTTP and Websocket Client" version="${project.version}">
+        <feature dependency="true">http</feature>
+        <bundle start-level="30">mvn:org.eclipse.jetty/jetty-proxy/${jetty.version}</bundle>
+        <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-api/${jetty.version}</bundle>
+        <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-common/${jetty.version}</bundle>
+        <bundle start-level="30">mvn:org.eclipse.jetty.websocket/websocket-client/${jetty.version}</bundle>
+    </feature>
+
     <feature name="openhab-runtime-certificate" description="SSL Certificate Generator" version="${project.version}">
         <bundle start-level="20">mvn:org.openhab.core/org.openhab.io.jetty.certificate/${project.version}</bundle>
     </feature>
@@ -57,6 +64,7 @@
         <feature>esh-model-script</feature>
         <feature>esh-model-sitemap</feature>
         <feature>esh-ui</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_7</bundle>
         <bundle>mvn:org.openhab.core/org.openhab.core.compat1x/${project.version}</bundle>
     </feature>
 

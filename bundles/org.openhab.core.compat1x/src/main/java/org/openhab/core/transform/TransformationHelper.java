@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-2016 by the respective copyright holders.
+ * Copyright (c) 2015-2017 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -16,6 +16,10 @@ import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ *
+ * @author Kai Kreuzer - Initial contribution
+ */
 public class TransformationHelper {
 
     private static Logger logger = LoggerFactory.getLogger(TransformationHelper.class);
@@ -36,11 +40,12 @@ public class TransformationHelper {
                 if (refs != null && refs.size() > 0) {
                     return new TransformationServiceDelegate(context.getService(refs.iterator().next()));
                 } else {
-                    logger.warn(
-                            "Cannot get service reference for transformation service of type " + transformationType);
+                    logger.warn("Cannot get service reference for transformation service of type {}",
+                            transformationType);
                 }
             } catch (InvalidSyntaxException e) {
-                logger.warn("Cannot get service reference for transformation service of type " + transformationType, e);
+                logger.warn("Cannot get service reference for transformation service of type {}", transformationType,
+                        e);
             }
         }
         return null;

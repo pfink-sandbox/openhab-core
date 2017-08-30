@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-2016 by the respective copyright holders.
+ * Copyright (c) 2015-2017 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -24,7 +24,7 @@ package org.openhab.model.sitemap;
  *
  * @see org.openhab.model.sitemap.SitemapPackage#getList()
  * @model
- * @generated
+ * @author Kai Kreuzer - Initial contribution
  */
 public interface List extends NonLinkableWidget {
     /**
@@ -40,7 +40,6 @@ public interface List extends NonLinkableWidget {
      * @see #setSeparator(String)
      * @see org.openhab.model.sitemap.SitemapPackage#getList_Separator()
      * @model
-     * @generated
      */
     String getSeparator();
 
@@ -51,7 +50,6 @@ public interface List extends NonLinkableWidget {
      *
      * @param value the new value of the '<em>Separator</em>' attribute.
      * @see #getSeparator()
-     * @generated
      */
     void setSeparator(String value);
 

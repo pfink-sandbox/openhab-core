@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-2016 by the respective copyright holders.
+ * Copyright (c) 2015-2017 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.openhab.model.sitemap.SitemapPackage#getSitemap()
  * @model
- * @generated
+ * @author Kai Kreuzer - Initial contribution
  */
 public interface Sitemap extends SitemapModel {
     /**
@@ -45,7 +45,6 @@ public interface Sitemap extends SitemapModel {
      * @see #setName(String)
      * @see org.openhab.model.sitemap.SitemapPackage#getSitemap_Name()
      * @model
-     * @generated
      */
     String getName();
 
@@ -56,7 +55,6 @@ public interface Sitemap extends SitemapModel {
      *
      * @param value the new value of the '<em>Name</em>' attribute.
      * @see #getName()
-     * @generated
      */
     void setName(String value);
 
@@ -73,7 +71,6 @@ public interface Sitemap extends SitemapModel {
      * @see #setLabel(String)
      * @see org.openhab.model.sitemap.SitemapPackage#getSitemap_Label()
      * @model
-     * @generated
      */
     String getLabel();
 
@@ -84,7 +81,6 @@ public interface Sitemap extends SitemapModel {
      *
      * @param value the new value of the '<em>Label</em>' attribute.
      * @see #getLabel()
-     * @generated
      */
     void setLabel(String value);
 
@@ -101,7 +97,6 @@ public interface Sitemap extends SitemapModel {
      * @see #setIcon(String)
      * @see org.openhab.model.sitemap.SitemapPackage#getSitemap_Icon()
      * @model
-     * @generated
      */
     String getIcon();
 
@@ -112,7 +107,6 @@ public interface Sitemap extends SitemapModel {
      *
      * @param value the new value of the '<em>Icon</em>' attribute.
      * @see #getIcon()
-     * @generated
      */
     void setIcon(String value);
 
@@ -129,7 +123,6 @@ public interface Sitemap extends SitemapModel {
      * @return the value of the '<em>Children</em>' containment reference list.
      * @see org.openhab.model.sitemap.SitemapPackage#getSitemap_Children()
      * @model containment="true"
-     * @generated
      */
     EList<Widget> getChildren();
 

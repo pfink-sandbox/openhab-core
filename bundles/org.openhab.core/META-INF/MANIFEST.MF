@@ -7,7 +7,7 @@ Ignore-Package: org.openhab.core.internal.items,org.openhab.core.inter
 Bundle-Name: openHAB Core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: openHAB
-Bundle-Version: 2.1.0.qualifier
+Bundle-Version: 2.2.0.qualifier
 Bundle-Activator: org.openhab.core.internal.CoreActivator
 Bundle-ManifestVersion: 2
 Bundle-License: http://www.eclipse.org/legal/epl-v10.html
@@ -15,9 +15,6 @@ Import-Package: com.google.common.cache,
  javax.servlet,
  javax.servlet.http,
  org.apache.commons.collections,
- org.apache.commons.httpclient,
- org.apache.commons.httpclient.methods,
- org.apache.commons.httpclient.params,
  org.apache.commons.io,
  org.apache.commons.lang,
  org.eclipse.emf.common.util;resolution:=optional,

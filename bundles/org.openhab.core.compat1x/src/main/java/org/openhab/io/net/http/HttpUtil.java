@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-2016 by the respective copyright holders.
+ * Copyright (c) 2015-2017 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -186,9 +186,9 @@ public class HttpUtil {
 
         if (logger.isDebugEnabled()) {
             try {
-                logger.debug("About to execute '" + method.getURI().toString() + "'");
+                logger.debug("About to execute '{}'", method.getURI());
             } catch (URIException e) {
-                logger.debug(e.getMessage());
+                logger.debug("{}", e.getMessage());
             }
         }
 
@@ -196,12 +196,12 @@ public class HttpUtil {
 
             int statusCode = client.executeMethod(method);
             if (statusCode != HttpStatus.SC_OK) {
-                logger.warn("Method failed: " + method.getStatusLine());
+                logger.warn("Method failed: {}", method.getStatusLine());
             }
 
             String responseBody = IOUtils.toString(method.getResponseBodyAsStream());
             if (!responseBody.isEmpty()) {
-                logger.debug(responseBody);
+                logger.debug("{}", responseBody);
             }
 
             return responseBody;

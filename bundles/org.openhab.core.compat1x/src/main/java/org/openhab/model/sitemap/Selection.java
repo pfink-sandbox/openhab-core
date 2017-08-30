@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-2016 by the respective copyright holders.
+ * Copyright (c) 2015-2017 by the respective copyright holders.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.openhab.model.sitemap.SitemapPackage#getSelection()
  * @model
- * @generated
+ * @author Kai Kreuzer - Initial contribution
  */
 public interface Selection extends NonLinkableWidget {
     /**
@@ -42,7 +42,6 @@ public interface Selection extends NonLinkableWidget {
      * @return the value of the '<em>Mappings</em>' containment reference list.
      * @see org.openhab.model.sitemap.SitemapPackage#getSelection_Mappings()
      * @model containment="true"
-     * @generated
      */
     EList<Mapping> getMappings();
 
