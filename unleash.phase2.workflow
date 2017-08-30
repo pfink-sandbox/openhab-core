@@ -17,4 +17,4 @@ detectReleaseArtifacts
 setDevVersion
 setDevVersionTycho
 installArtifacts
-deployArtifacts
+#deployArtifacts
