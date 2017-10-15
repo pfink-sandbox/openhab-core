@@ -3,7 +3,7 @@
 
     <groupId>org.openhab.core</groupId>
     <artifactId>pom</artifactId>
-    <version>2.3.1-SNAPSHOT</version>
+    <version>2.3.1</version>
     <packaging>pom</packaging>
 
     <name>openHAB</name>
@@ -29,7 +29,7 @@
         <connection>scm:git:https://github.com/pfink-sandbox/openhab-core.git</connection>
         <developerConnection>scm:git:https://github.com/pfink-sandbox/openhab-core.git</developerConnection>
         <url>https://github.com/pfink-sandbox/openhab-core</url>
-<tag>2.3.0</tag>
+<tag>2.3.1</tag>
     </scm>
 
     <issueManagement>
